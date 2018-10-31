@@ -51,6 +51,8 @@ jar {
 }
 
 test {
+    dependsOn 'build_envs'
+
     useJUnitPlatform()
 
     testLogging {
@@ -67,6 +69,13 @@ test {
                     "${result.skippedTestCount} skipped"
         }
     }
+
+    doLast {
+        exec {
+            executable file('./virtualenv_run/bin/pre-commit')
+            args "run", "--all-files"
+        }
+    }
 }
 
 // Set up python environments for pre-commit
@@ -75,7 +84,8 @@ envs {
     python "virtualenv_run", "3.6.7", ["pre-commit"]
 }
 
-task install_hooks(dependsOn: 'build_envs') {
+task install_hooks {
+    dependsOn 'build_envs'
     doLast {
         exec {
             executable file('./virtualenv_run/bin/pre-commit')

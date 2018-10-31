@@ -1,11 +1,13 @@
 #!/bin/bash
 set -euxo pipefail
 
+REPO_NAME="TestRobot"
+
 function cleanup {
-    rm -rf example_robot/
+    rm -rf "$REPO_NAME/"
 }
 
 trap cleanup EXIT
 
-cookiecutter --no-input . repo_name=example_robot team_number=5499
-example_robot/gradlew -p example_robot test
+cookiecutter --no-input . repo_name="$REPO_NAME" team_number=5499
+command "$REPO_NAME/gradlew" -p "$REPO_NAME" test
