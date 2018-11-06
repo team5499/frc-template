@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
-REPO_NAME="TestRobot"
+REPO_NAME="testproj"
 
 function cleanup {
     rm -rf "$REPO_NAME/"
