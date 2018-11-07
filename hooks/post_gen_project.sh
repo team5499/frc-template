@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euxo pipefail
 
+# Install aacivator files since cookiecutter doesn't like symlinks
+ln -s virtualenv_run/bin/activate .activate.sh
+echo 'deactivate' > .deactivate.sh
+
 gradle wrapper
 
 git init
