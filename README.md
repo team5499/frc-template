@@ -1,7 +1,5 @@
 # frc-template
 
-[![CircleCI](https://circleci.com/gh/team5499/frc-template.svg?style=svg)](https://circleci.com/gh/team5499/frc-template)
-
 ![TravisCI](https://api.travis-ci.org/team5499/frc-template.svg)
 
 Cookiecutter template for our FRC/WPILib projects
