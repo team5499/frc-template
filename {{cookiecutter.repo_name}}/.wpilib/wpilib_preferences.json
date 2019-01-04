@@ -1,0 +1,6 @@
+{
+    "enableCppIntellisense": false,
+    "currentLanguage": "java",
+    "projectYear": "{{cookiecutter.year}}",
+    "teamNumber": {{cookiecutter.team_number}}
+}
